@@ -45,7 +45,7 @@ b{
 
  body, html {
     height: 100%;
-    /* font-family: "Open Sans", sans-serif !important; */
+    font-family: var(--body-font);
   }
   
   .bg {

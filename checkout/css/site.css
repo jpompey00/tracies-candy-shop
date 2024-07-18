@@ -3,6 +3,11 @@
 :root{
     --body-font: "Poppins", sans-serif;
 }
+body{
+    font-family: var(--body-font);
+
+}
+
 #registration{
     background-color: rgb(194, 145, 239);
     padding:20px;
@@ -19,13 +24,13 @@
     text-align: center;
 }
 
-
-
 body{
     background-color: plum;
     text-align: center;
-    /* font-family: "Open Sans", sans-serif !important; */
+    
 }
+
+
 
 #login{
     background-color: rgb(194, 145, 239);
