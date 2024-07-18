@@ -86,7 +86,8 @@ if(cart.length > 0){
   }
 
   //otherwise it will add the item to the cart.
-  let obj = {
+  let obj = 
+  {
     item:product,
     quantity:1
   }
