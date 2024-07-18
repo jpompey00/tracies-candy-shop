@@ -2,6 +2,7 @@
 body {
     background-color: #f8f9fa;
     color: #343a40;
+    
   }
   
   /* Navbar Styles */
@@ -80,3 +81,74 @@ body {
   }
 
 
+  nav {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: var(--max-width);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+  }
+  
+  .nav__logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--extra-light);
+  }
+  
+  .nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .nav__links .link {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--extra-light);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .nav__links .link:hover {
+    color: var(--primary-color);
+  }
+  
+  .search__box {
+    padding: 0.5rem 0;
+    border-bottom: 2px solid var(--extra-light);
+  }
+  
+  .search__box input {
+    color: var(--extra-light);
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+  
+  .search__box i {
+    color: var(--extra-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--extra-light);
+    /* color: #fff !important; */
+  }  
+
+  .background-image{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}

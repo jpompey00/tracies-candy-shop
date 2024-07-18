@@ -5,7 +5,7 @@
   --text-dark: #333333;
   --text-light: #ffffff33;
   --extra-light: #f3f4f6;
-
+  --gray-color: #2b2b2b;
   --max-width: 1300px;
 }
 .bg-black{
@@ -23,8 +23,10 @@
 
 a {
   text-decoration: none;
-  color: #fff !important;
+  color: var(--gray-color) !important;
+
 }
+
 #white{
   color: #000 !important;
 
@@ -109,7 +111,6 @@ nav {
     min-width: 100%;
     min-height: 100%;
     z-index: -1;
-   
 }
 
 /* Login form css */

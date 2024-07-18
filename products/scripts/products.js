@@ -68,6 +68,11 @@ function addToCart(productName) {
 
 // Wait until the DOM is fully loaded before displaying products
 document.addEventListener('DOMContentLoaded', () => {
+  //Julian Addition : Keeps' track of the items in the cart if you go between pages.
+  //probably doable without the cart array but for simplicity sake will keep.
+  if(sessionStorage.cart){
+    cart = JSON.parse(sessionStorage.cart);
+  }
   displayProducts(modelCandyData);
 });
 
