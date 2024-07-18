@@ -16,6 +16,7 @@ const creditCardNumberInputBox = document.getElementById("creditCardNumberInputB
 const creditCardNameInputBox = document.getElementById("creditCardNameInputBox");
 const creditCardExpriationDateInputBox = document.getElementById("creditCardExpriationDateInputBox");
 const creditCardCVVInputBox = document.getElementById("creditCardCVVInputBox");
+const discountAreaInputBox = document.getElementById("discountAreaInputBox");
 
 //Dropdown
 const stateDropdown = document.getElementById("stateDropdown");
@@ -23,43 +24,46 @@ const stateDropdown = document.getElementById("stateDropdown");
 //Divs
 const cartOutputDiv = document.getElementById("cartOutputDiv");
 const costOutputDiv = document.getElementById("costOutputDiv");
+const discountAreaDiv = document.getElementById("discountAreaDiv");
 
 //textboxes
 const subtotalTextBox = document.getElementById("subtotalTextBox");
 const taxesTextBox = document.getElementById("taxesTextBox");
 const shippingTextbox = document.getElementById("shippingTextbox");
 const totalTextBox = document.getElementById("totalTextBox");
+const discountTextbox = document.getElementById("discountTextbox");
 
+//button
+const discountAreaSubmitButton = document.getElementById("discountAreaSubmitButton");
+const completeOrderButton = document.getElementById("completeOrderButton");
 
+//form
+const checkoutForm = document.getElementById("checkoutForm");
 
 //why are u global.
 let subtotal = 0;
+let discount = 0;
 
 window.onload = () => {
     cartOutputDiv.innerHTML = "";
     loadStateDropdown();
     loadCheckout(JSON.parse(sessionStorage.cart));
     stateDropdown.onchange = loadTotals;
-    //NOTES: DELETE FOR FINAL TURNIN
-    //probably best to go with this one.
-    // let cartModel3 = [
-    //     {
-    //         item: candyData2[1001],
-    //         quantity: 1
-    //     },
-    //     {
-    //         item: candyData2[1002],
-    //         quantity: 2
-    //     },
-    //     {
-    //         item: candyData2[1003],
-    //         quantity: 3
-    //     },
-    //     {
-    //         item: candyData2[1005],
-    //         quantity: 3
-    //     },
-    // ]
+    discountAreaSubmitButton.onclick = () => {
+        
+        if(discountAreaInputBox.value == "GRANDOPENING"){
+            
+            discount = .1;
+            loadTotals();
+        }
+    }
+
+    checkoutForm.addEventListener('submit', (event)=>{
+        event.preventDefault();
+        window.alert("Order Placed!");
+        //redirect to home page
+
+    });    
 
     // //Testing
     // sessionStorage.cart_test1 = JSON.stringify(cartModel1);
@@ -85,18 +89,28 @@ function loadCheckout(cart) {
 
 function loadTotals() {
     let taxRate = calculateTaxRate();
-    console.log(taxRate);
     let taxes = subtotal*taxRate;
     let shipping = 3.00;
+    let discountAmount;
+
     if(stateDropdown.value == "GA"){
         shipping = 1.50;
     } 
+    if(discount > 0){
+        
+        discountAreaDiv.style = "visibility: visible;";
+        discountAmount = subtotal * discount;
+        discountTextbox.innerHTML = `- $${discountAmount.toFixed(2)}`;
+    } else {
+        discountAmount = 0;
+    }
     
     subtotalTextBox.innerHTML = `$${subtotal.toFixed(2)}`;
     taxesTextBox.innerHTML = `$${taxes.toFixed(2)}`;
     shippingTextbox.innerHTML = `$${shipping.toFixed(2)}`;
+    console.log()
 
-    totalTextBox.innerHTML = `$${(subtotal + taxes + shipping).toFixed(2)}`;
+    totalTextBox.innerHTML = `$${(subtotal + taxes + shipping - discountAmount).toFixed(2)}`;
     if(taxesTextBox.innerHTML == "$NaN"){
         taxesTextBox.innerHTML = "Please Select Your State";
         totalTextBox.innerHTML = " ";

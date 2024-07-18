@@ -9,10 +9,10 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="css/site.css" rel="stylesheet">
     <!--Edit this-->
-    <!-- <link href="css/checkout.css" rel="stylesheet"> -->
+    <link href="css/checkout.css" rel="stylesheet">
 </head>
 
-<body class="center">
+<body class="center bg">
 
     <main>
         <!--Checkout Title-->
@@ -23,210 +23,226 @@
             <!--Title-->
             <div class="row">
                 <div class="col">
-                    <p class="h1 text-start">Tracies Candy Shop</p>
-                    <p class="h2">Checkout</p>
+                    <p class="h1 text-start mb-5">Tracies Candy Shop</p>
+                    <!-- <p class="h2">Checkout</p> -->
                 </div>
             </div>
 
+            <form id = "checkoutForm">
+                <div class="row">
+                    <!--Checkout Form-->
+                    <div class="col">
+                        <div class="row g-3">
+                            <!--User Information-->
 
-            <div class="row">
-                <!--Checkout Form-->
-                <div class="col">
-                    <form class="row g-3">
-                        <!--User Information-->
+                            <!--Add a border-->
+                            <!--Change these class names-->
+                            <p class="h3 text-start">Contact Info</p>
+                            <div class="col-12 form-floating">
+                                <input id="emailInputBox" type="email" class="form-control" placeholder="" required>
+                                <label for="emailInputBox" class="">Email</label>
+                            </div>
+                            <div class="col-12 form-floating">
+                                <input id="phoneNumberInputBox" type="email" class="form-control" placeholder="">
+                                <label for="phoneNumberInputBox" class="">Phone (optional)</label>
+                            </div>
 
-                        <!--Add a border-->
-                        <!--Change these class names-->
-                        <p class="h3 text-start">Contact Info</p>
-                        <div class="col-12 form-floating">
-                            <input id="emailInputBox" type="email" class="form-control" placeholder="" required>
-                            <label for="emailInputBox" class="">Email</label>
+                            <p class="h3 text-start">Shipping Address</p>
+                            <div class="col-md-6 form-floating">
+                                <input id="firstNameInputBox" type="text" class="form-control" placeholder="" required>
+                                <label for="firstNameInputBox" class="">First Name</label>
+                            </div>
+
+                            <div class="col-md-6 form-floating">
+                                <input id="lastNameInputBox" type="text" class="form-control" placeholder=" " required>
+                                <label for="lastNameInputBox" class="">Last Name</label>
+                            </div>
+
+                            <div class="col-12 form-floating">
+                                <input type="text" class="form-control" id="address1InputBox" placeholder=" " required>
+                                <label for="address1InputBox" class="">Address</label>
+
+                            </div>
+
+                            <div class="col-12 form-floating">
+                                <input type="text" class="form-control" id="address2InputBox" placeholder=" ">
+                                <label for="address2InputBox" class="">Address 2</label>
+                            </div>
+
+                            <div class="col-12 form-floating">
+                                <input type="text" class="form-control" id="cityInputBox" placeholder=" " required>
+                                <label for="cityInputBox" class="">City</label>
+                            </div>
+
+
+                            <!--Needs Fixing-->
+                            <div class="col-md-6 form-floating">
+
+                                <!--Load this up programatically-->
+                                <select id="stateDropdown" class="form-select">
+                                    <option>Choose a State</option>
+
+                                </select>
+                                <label for="stateDropdown" class="form-label">State</label>
+
+                            </div>
+
+
+
+                            <div class="col-md-6 form-floating">
+                                <input id="zipcodeInputBox" type="text" required class="form-control" placeholder=" ">
+                                <label for="zipcodeInputBox" class="">Zip</label>
+                            </div>
+
+
+
+                            <!--Card Information-->
+                            <h2>Card Information</h2>
+
+                            <div class="col-12 form-floating">
+                                <input id="creditCardNumberInputBox" type="text" class="form-control" placeholder=" "
+                                    required>
+                                <label for="creditCardNumberInputBox" class="">Credit Card Number</label>
+                            </div>
+
+                            <div class="col-12 form-floating">
+                                <input id="creditCardNameInputBox" type="text" class="form-control" placeholder=" "
+                                    required>
+                                <label for="creditCardNameInputBox" class="">Name on Card</label>
+                            </div>
+
+
+
+                            <div class="col-md-6 form-floating">
+                                <input id="creditCardExpriationDateInputBox" type="text" class="form-control"
+                                    placeholder=" " required>
+                                <label for="creditCardExpriationDateInputBox" class="">Expiration Date</label>
+                            </div>
+
+                            <div class="col-md-6 form-floating mb-5">
+                                <input id="creditCardCVVInputBox" type="text" class="form-control" placeholder=" "
+                                    required>
+                                <label for="creditCardCVVInputBox" class="">CCV</label>
+                            </div>
                         </div>
-                        <div class="col-12 form-floating">
-                            <input id="phoneNumberInputBox" type="email" class="form-control" placeholder="">
-                            <label for="phoneNumberInputBox" class="">Phone (optional)</label>
-                        </div>
-
-                        <p class="h3 text-start">Shipping Address</p>
-                        <div class="col-md-6 form-floating">
-                            <input id="firstNameInputBox" type="text" class="form-control" placeholder="" required>
-                            <label for="firstNameInputBox" class="">First Name</label>
-                        </div>
-
-                        <div class="col-md-6 form-floating">
-                            <input id="lastNameInputBox" type="text" class="form-control" placeholder=" " required>
-                            <label for="lastNameInputBox" class="">Last Name</label>
-                        </div>
-
-                        <div class="col-12 form-floating">
-                            <input type="text" class="form-control" id="address1InputBox" placeholder=" " required>
-                            <label for="address1InputBox" class="">Address</label>
-
-                        </div>
-
-                        <div class="col-12 form-floating">
-                            <input type="text" class="form-control" id="address2InputBox" placeholder=" " required>
-                            <label for="address2InputBox" class="">Address 2</label>
-                        </div>
-
-                        <div class="col-12 form-floating">
-                            <input type="text" class="form-control" id="cityInputBox" placeholder=" " required>
-                            <label for="cityInputBox" class="">City</label>
-                        </div>
+                    </div>
 
 
-                        <!--Needs Fixing-->
-                        <div class="col-md-6 form-floating">
+                    <!--Cart Section-->
+                    <div class="col border-start border-black">
 
-                            <!--Load this up programatically-->
-                            <select id="stateDropdown" class="form-select">
-                                <option>Choose a State</option>
+                        <!--Its all cards baby-->
+                        <div id="cartOutputDiv" class="my-3">
+                            <!--Make this card colored-->
+                            <div class="card w-75 mb-3 border-0" style="background-color: plum;">
 
-                            </select>
-                            <label for="stateDropdown" class="form-label">State</label>
-
-                        </div>
-
-
-
-                        <div class="col-md-6 form-floating">
-                            <input id="zipcodeInputBox" type="text" required class="form-control" placeholder=" ">
-                            <label for="zipcodeInputBox" class="">Zip</label>
-                        </div>
-
-
-
-                        <!--Card Information-->
-                        <h2>Card Information</h2>
-
-                        <div class="col-12 form-floating">
-                            <input id="creditCardNumberInputBox" type="text" class="form-control" placeholder=" "
-                                required>
-                            <label for="creditCardNumberInputBox" class="">Credit Card Number</label>
-                        </div>
-
-                        <div class="col-12 form-floating">
-                            <input id="creditCardNameInputBox" type="text" class="form-control" placeholder=" "
-                                required>
-                            <label for="creditCardNameInputBox" class="">Name on Card</label>
-                        </div>
-
-
-
-                        <div class="col-md-6 form-floating">
-                            <input id="creditCardExpriationDateInputBox" type="text" class="form-control"
-                                placeholder=" " required>
-                            <label for="creditCardExpriationDateInputBox" class="">Experiation Date</label>
-                        </div>
-
-                        <div class="col-md-6 form-floating">
-                            <input id="creditCardCVVInputBox" type="text" class="form-control" placeholder=" " required>
-                            <label for="creditCardCVVInputBox" class="">CCV</label>
-                        </div>
-                    </form>
-                </div>
-
-
-                <!--Cart Section-->
-                <div class="col">
-
-                    <!--Its all cards baby-->
-                    <div id="cartOutputDiv" class="my-3">
-                        <!--Make this card colored-->
-                        <div class="card w-75 mb-3 border-0" style="background-color: plum;">
-
-                            <div class="card-body">
-                                <div class="row">
-                                    <!--Image-->
-                                    <div class="col">
-                                        <p>Image here</p>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <!--Image-->
+                                        <div class="col">
+                                            <p>Image here</p>
+                                        </div>
+                                        <!--Item name and Amount-->
+                                        <div class="col">
+                                            <p class="h5 card-title text-start">Item Name</p>
+                                            <p class="text-start">Amount: </p>
+                                        </div>
+                                        <!--Price-->
+                                        <div class="col">
+                                            <p class="card-text">$XXX.XX</p>
+                                        </div>
                                     </div>
-                                    <!--Item name and Amount-->
-                                    <div class="col">
-                                        <p class="h5 card-title text-start">Item Name</p>
-                                        <p class="text-start">Amount: </p>
-                                    </div>
-                                    <!--Price-->
-                                    <div class="col">
-                                        <p class="card-text">$XXX.XX</p>
-                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <hr>
+                        <!--Add a inline button-->
+                        <!--Add a test discount code-->
+                        <div class="input-group my-5">
+                            <input id="discountAreaInputBox" type="text" class="form-control"
+                                placeholder="Discount Code">
+                            <button id="discountAreaSubmitButton" class="btn btn-primary" type="button">Submit</button>
+                        </div>
+                        <hr>
+
+                        <!--Subtotal Section-->
+                        <div class="my-4">
+                            <!--subtotal-->
+                            <div class="row">
+                                <div class="col">
+                                    <p class="text-start h5">Subtotal</p>
+                                </div>
+                                <div class="col">
+                                    <p id="subtotalTextBox" class="text-end h5">XX.XX</p>
+                                </div>
+                            </div>
+                            <!--Taxes-->
+                            <div class="row">
+                                <div class="col">
+                                    <p class="text-start h5">Taxes</p>
+                                </div>
+                                <div class="col">
+                                    <p id="taxesTextBox" class="text-end h5">XX.XX</p>
+                                </div>
+                            </div>
+                            <!--Shipping-->
+                            <!--If not in GA add $5 to shipping-->
+                            <!--If in GA, make it free-->
+                            <div class="row">
+                                <div class="col">
+                                    <p class="text-start h5">Shipping</p>
+                                </div>
+                                <div class="col">
+                                    <p id="shippingTextbox" class="text-end h5">XX.XX</p>
                                 </div>
                             </div>
 
+                            <!--Discount Area-->
+                            <div id="discountAreaDiv" class="row" style="visibility: hidden;">
+                                <div class="col">
+                                    <p class="text-start h5 fst-italic fw-light">Discount Applied</p>
+                                </div>
+                                <div class="col">
+                                    <p id="discountTextbox" class="text-end h5 fst-italic fw-light">$XX.XX</p>
+                                </div>
+                            </div>
+
+
                         </div>
 
+                        <hr>
+
+                        <!--Total Cost Output Section-->
+                        <div id="costOutputDiv" class="my-4">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="text-start h3">Total</p>
+                                </div>
+                                <div class="col">
+                                    <p id="totalTextBox" class="text-end h3">$100000</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--Submit Button-->
+                        <div class="my-3">
+
+                            <div class="mb-3 row">
+                                <div class="col-12 text-end">
+                                    <button id="completeOrderButton" type="submit" class="btn btn-primary">Complete
+                                        Order</button>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
-                    <hr>
-                    <!--Add a inline button-->
-                    <!--Add a test discount code-->
-                    <div class="input-group my-5">
-                        <input type="text" class="form-control" placeholder="Discount Code" >
-                        <button class="btn btn-primary" type="button" id="button-addon2">Submit</button>
-                      </div>
-                    <hr>
-
-                    <!--Subtotal Section-->
-                    <div class = "my-4">
-                        <!--subtotal-->
-                        <div class = "row">
-                            <div class = "col">
-                                <p class = "text-start h5">Subtotal</p>
-                            </div>
-                            <div class = "col">
-                                <p id = "subtotalTextBox" class = "text-end h5">XX.XX</p>
-                            </div>
-                        </div>
-                        <!--Taxes-->
-                        <div class = "row">
-                            <div class = "col">
-                                <p class = "text-start h5">Taxes</p>
-                            </div>
-                            <div class = "col">
-                                <p id = "taxesTextBox" class = "text-end h5">XX.XX</p>
-                            </div>
-                        </div>
-                        <!--Shipping-->
-                        <!--If not in GA add $5 to shipping-->
-                        <!--If in GA, make it free-->
-                        <div class = "row">
-                            <div class = "col">
-                                <p class = "text-start h5">Shipping</p>
-                            </div>
-                            <div class = "col">
-                                <p id = "shippingTextbox" class = "text-end h5">XX.XX</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr>
-
-                    <!--Total Cost Output Section-->
-                    <div id="costOutputDiv" class="my-4">
-                        <div class="row">
-                            <div class="col">
-                                <p class="text-start h3">Total</p>
-                            </div>
-                            <div class="col">
-                                <p id = "totalTextBox" class="text-end h3">$100000</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-
-
-                    <!--Submit Button-->
-                    <div class="my-3">
-
-                        <div class="mb-3 row">
-                            <div class="col-12 text-end">
-                                <button type="submit" class="btn btn-primary">Complete Order</button>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
+            </form>
         </div>
 
 
@@ -243,7 +259,7 @@
 
 
 
-    
+
     <script src="scripts/checkout.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
